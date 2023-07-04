@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!-- https://www.stevewolf.co/ -->
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      nav {
+        height: 120px;
+        padding: 0px 0px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        background-color: white;
+        z-index: 1;
+      }
+      nav ul {
+        display: flex;
+        margin-top: 4.5%;
+        margin-right: 2%;
+        gap: 105px;
+        font-size: 17px;
+      }
+      .sticky {
+        position: sticky;
+        top: 0;
+      }
+      ul {
+        list-style-type: none;
+      }
+      .logo {
+        margin-top: 3.8%;
+        margin-left: 8%;
+      }
+      header {
+        margin-top: 10%;
+        margin-bottom: 5%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400px;
+        font-size: 46px;
+        color: #242a35;
+      }
+      header p {
+        margin-left: 8%;
+        font-size: 45px;
+        line-height: 1.5;
+      }
+      main {
+        height: 3650px;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        background: rgba(0, 0, 0, 1);
+        cursor: pointer;
+      }
+      .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        font-size: 30px;
+      }
+      .overlayContainer1 {
+        position: relative;
+        width: 900px;
+        height: 550px;
+        display: inherit;
+      }
+      h2:hover {
+        opacity: 0.8;
+      }
+      .overlayContainer2 {
+        position: relative;
+        width: 443px;
+        height: 300px;
+        left: 900px;
+        bottom: 550px;
+      }
+      .overlayContainer2:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer3 {
+        position: relative;
+        width: 448px;
+        height: 250px;
+        left: 900px;
+        bottom: 550px;
+      }
+      .overlayContainer3:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer4 {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        bottom: 550px;
+      }
+      .overlayContainer4:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer5 {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        bottom: 550px;
+      }
+      .overlayContainer5:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer6 {
+        position: relative;
+        width: 849px;
+        height: 598px;
+        left: 500px;
+        bottom: 1150px;
+      }
+      .overlayContainer6:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer7 {
+        position: relative;
+        width: 900px;
+        height: 597px;
+        bottom: 1150px;
+      }
+      .overlayContainer7:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer8 {
+        position: relative;
+        width: 448px;
+        height: 300px;
+        left: 900px;
+        bottom: 1747px;
+      }
+      .overlayContainer8:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer9 {
+        position: relative;
+        width: 448px;
+        height: 300px;
+        left: 900px;
+        bottom: 1750px;
+      }
+      .overlayContainer9:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer10 {
+        position: relative;
+        width: 500px;
+        bottom: 1750px;
+      }
+      .overlayContainer10:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer11 {
+        position: relative;
+        width: 500px;
+        height: 299px;
+        bottom: 1755px;
+      }
+      .overlayContainer11:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer12 {
+        position: relative;
+        width: 848px;
+        height: 600px;
+        left: 500px;
+        bottom: 2354px;
+      }
+      .overlayContainer12:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer13 {
+        position: relative;
+        width: 900px;
+        height: 599px;
+        bottom: 2355px;
+      }
+      .overlayContainer13:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer14 {
+        position: relative;
+        width: 448px;
+        height: 300px;
+        left: 900px;
+        bottom: 2955px;
+      }
+      .overlayContainer14:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer15 {
+        position: relative;
+        width: 448px;
+        height: 300px;
+        left: 900px;
+        bottom: 2955px;
+      }
+      .overlayContainer15:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer16 {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        bottom: 2955px;
+      }
+      .overlayContainer16:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer17 {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        bottom: 2955px;
+      }
+      .overlayContainer17:hover .overlay {
+        opacity: 0.8;
+      }
+      .overlayContainer18 {
+        position: relative;
+        width: 847px;
+        height: 600px;
+        left: 500px;
+        bottom: 3555px;
+      }
+      .overlayContainer18:hover .overlay {
+        opacity: 0.8;
+      }
+      .container {
+        margin-left: 19%;
+      }
+      .row {
+        display: flex;
+      }
+      .rowChild {
+        width: 100%;
+        padding: 20px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .rowChild h3 {
+        font-size: 24px;
+        margin-top: 10%;
+      }
+      .rowChild ul li {
+        margin-bottom: 10px;
+      }
+      .formSection {
+        width: 800px;
+        height: 80px;
+        overflow: auto;
+      }
+      input[type="text"] {
+        width: 86%;
+        padding: 16px 20px;
+        margin-top: 10px;
+        margin-left: 95px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .subscribe {
+        text-align: center;
+        background-color: rgb(0, 205, 141);
+        border-radius: 4px;
+        max-width: 675px;
+        margin-top: 2%;
+        margin-left: 12%;
+        padding: 14px 20px;
+      }
+      .subscribe a {
+        color: white;
+      }
+      .subscribe:hover {
+        background-color: rgb(19, 163, 118);
+        transition: 0.8s;
+        cursor: pointer;
+      }
+      .footer {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        color: white;
+        padding-top: 6%;
+        padding-bottom: 10%;
+      }
+      .footer a {
+        color: white;
+      }
+      .image {
+        margin-left: 8%;
+        margin-bottom: 21%;
+      }
+      .footertext {
+        margin-left: 7%;
+      }
+      .footertext a {
+        text-decoration: underline;
+        margin-bottom: 5%;
+      }
+      .footersocial {
+        margin-top: 6%;
+        margin-left: 20%;
+      }
+      .icon {
+        display: flex;
+        gap: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="logo">
+        <img src="assets/logo.jpg" width="35px" height="35px" />
+      </div>
+      <ul>
+        <a href="#"> Work </a>
+        <a href="#"> About </a>
+        <a href="#"> Contact </a>
+        <a href="#"> Shop </a>
+      </ul>
+    </nav>
+
+    <header>
+      <b
+        ><p>Daniel Chua Design is a graphic design</p>
+        <p>and branding studio. We help build</p>
+        <p>meaningful brands through design.</p></b
+      >
+    </header>
+
+    <main>
+      <div class="overlayContainer1">
+        <img src="assets/austin.jpg" width="900px" height="550px" />
+        <div class="overlay">
+          <div class="text">
+            <h2>Austin FC</h2>
+            <p>Sports | Visual Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer2">
+        <img src="assets/korekapi.jpg" width="449px" height="300px" />
+        <div class="overlay">
+          <div class="text" style="font-size: 20px">
+            <h2>R20</h2>
+            <p>Restaurant | Branding</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer3">
+        <img src="assets/totebag.jpg" width="449px" height="250px" />
+        <div class="overlay">
+          <div class="text" style="font-size: 12px">
+            <h2>Commonwealth cyber ini...</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer4">
+        <img src="assets/skincare.jpg" width="500px" height="300px" />
+        <div class="overlay">
+          <div class="text">
+            <h2 style="font-size: 35px">Roji Tea</h2>
+            <p style="font-size: 12px">
+              Food & Beverage | Branding & Packaging
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer5">
+        <img src="assets/walk to right.jpg" width="500px" height="300px" />
+        <div class="overlay">
+          <div class="text" style="font-size: 20px">
+            <h2>Kaizen</h2>
+            <p>Tech | Brand Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer6">
+        <img src="assets/marysville.jpg" width="848px" height="598px" />
+        <div class="overlay">
+          <div class="text">
+            <h2>City Of Marrysvile</h2>
+            <p>City | Branding</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer7">
+        <img src="assets/viacitrus.jpg" width="900px" height="597px" />
+        <div class="overlay">
+          <div class="text" style="font-size: 30px">
+            <h2>Logos</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer8">
+        <img src="assets/killua.jpg" width="448px" height="300px" />
+        <div class="overlay">
+          <div class="text">
+            <h2 style="font-size: 30px">IRL</h2>
+            <p style="font-size: 12px">
+              Conference | Branding & Illustration System
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer9">
+        <img src="assets/coffe.jpg" width="448px" height="300px" />
+        <div class="overlay">
+          >
+          <div class="text">
+            <h2 style="font-size: 30px">Fairisle</h2>
+            <p style="font-size: 12px">Coffe | Branding & Packaging</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer10">
+        <img src="assets/puffed.jpg" width="500px" height="300px" />
+        <div class="overlay">
+          <div class="text">
+            <h2 style="font-size: 30px">Inti Provisions</h2>
+            <p style="font-size: 14px">
+              Food & Beverage | Branding & Packaging
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer11">
+        <img src="assets/blogo.jpg" width="500px" height="300px" />
+        <div class="overlay">
+          <div class="text">
+            <h2 style="font-size: 30px">Blueprint</h2>
+            <p style="font-size: 20px">Sports | Brand Identity</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer12">
+        <img src="assets/hotel.jpg" width="848px" height="600px" />
+        <div class="overlay">
+          <div class="text">
+            <h2>The Explores Society</h2>
+            <p>Hospitality | Branding</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer13">
+        <img src="assets/empower.JPG" width="900px" height="599px" />
+        <div class="overlay">
+          <div class="text">
+            <h2>Cleverly</h2>
+            <p style="font-size: 20px">
+              Legal Services | Branding & Illustration System
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer14">
+        <img src="assets/mrelectric.jpg" width="448px" height="300px" />
+        <div class="overlay">
+          <div class="text">
+            <h2 style="font-size: 30px">Mr. Electric</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer15">
+        <img src="assets/greatmain.png" width="448px" height="300px" />
+        <div class="overlay">
+          <div class="text">
+            <h2 style="font-size: 30px">Great & Main</h2>
+            <p style="font-size: 20px">Media | Branding</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer16">
+        <img src="assets/rlogo.jpg" width="500px" height="300px" />
+        <div class="overlay">
+          <div class="text">
+            <h2 style="font-size: 30px">Rabbet</h2>
+            <p style="font-size: 20px">Technology | Branding</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer17">
+        <img src="assets/lennox.jpg" width="500px" height="300px" />
+        <div class="overlay">
+          <div class="text">
+            <h2 style="font-size: 21px">Lennox - Degrees of Perfect</h2>
+            <p style="font-size: 15px">
+              Event | Branding & Illustration System
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlayContainer18">
+        <img src="assets/wellscoffe.jpg" width="848px" height="599px" />
+        <div class="overlay">
+          <div class="text">
+            <h2>Wells Coffe Co.</h2>
+            <p>Coffe | Branding & Packaging</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <content>
+      <h2 style="text-align: center; font-size: 36px">Our Services:</h2>
+      <div class="container">
+        <div class="row">
+          <div class="rowChild">
+            <h3>Brand Identity</h3>
+            <br />
+            <br />
+            <ul>
+              <li><a href="#"> Visual System</a></li>
+              <li><a href="#"> Logo Design </a></li>
+              <li><a href="#"> Brand Guidelines </a></li>
+              <li><a href="#"> Creative Direction </a></li>
+            </ul>
+          </div>
+
+          <div class="rowChild">
+            <h3>Packaging</h3>
+            <br />
+            <br />
+            <ul>
+              <li><a href="#"> Retail </a></li>
+              <li><a href="#"> Label Design </a></li>
+              <li><a href="#"> Direct Mail </a></li>
+            </ul>
+          </div>
+
+          <div class="rowChild">
+            <h3>Illustration</h3>
+            <br />
+            <br />
+            <ul>
+              <li><a href="#"> Illustration System </a></li>
+              <li><a href="#"> Icon Design </a></li>
+              <li><a href="#"> Custom Design </a></li>
+            </ul>
+          </div>
+
+          <div class="rowChild">
+            <h3>Print</h3>
+            <br />
+            <br />
+            <ul>
+              <li><a href="#"> Stationery </a></li>
+              <li><a href="#"> Posters </a></li>
+              <li><a href="#"> Signage </a></li>
+              <li><a href="#"> Apparel </a></li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 style="font-size: 20px; margin-left: 110px; margin-top: 50px">
+          Join our newsletter to receive tips, resources, and updates
+        </h2>
+        <div class="formSection">
+          <form>
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Email Addres" />
+          </form>
+
+          <div class="subscribe">
+            <a href="#"><b> Subscribe </b></a>
+          </div>
+        </div>
+      </div>
+    </content>
+
+    <div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+
+    <div class="footer">
+      <img src="assets/logo.JPG" class="image" width="40px" height="40px" />
+      <div class="footertext">
+        <p>Working with talented and driven people is our passion;</p>
+        <p>we'd love to build something great together.</p>
+        <br />
+        <a href="#"> Work with us </a>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h2>Contact</h2>
+        <br />
+        <hr />
+        <br />
+        <p style="font-size: 14px">+1 512 987 9147</p>
+        <a href="#" style="text-decoration: none; font-size: 14px">
+          hello@stevewolf.co
+        </a>
+        <br />
+        <br />
+        <br />
+        <br />
+        <a href="#" style="font-size: 13px">
+          ©2017 Steve Wolf Designs. All rights Reserved. Proudly created with
+          Wix.com
+        </a>
+      </div>
+
+      <div class="footersocial">
+        <h2>Social</h2>
+        <br />
+        <hr />
+        <br />
+        <div class="icon">
+          <a href="https://www.instagram.com/danieelc28._/" target="_blank"
+            ><i
+              class="fa-brands fa-square-instagram fa-xl fa-border-radius 50%"
+            ></i
+          ></a>
+          <a href="https://twitter.com/Daniel00489927" target="_blank"
+            ><i class="fa-brands fa-square-twitter fa-xl"></i
+          ></a>
+          <a href="https://www.facebook.com/daniel.chua.3511" target="_blank"
+            ><i class="fa-brands fa-facebook fa-xl"></i
+          ></a>
+          <a href="https://github.com/DanielChuaaa"
+            ><i class="fa-brands fa-discourse fa-xl" target="_blank"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onscroll = function () {
+        myFunction();
+      };
+
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
+  </body>
+</html>
